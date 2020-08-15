@@ -4,8 +4,8 @@ import image1 from '../assets/signup.svg'
 
 export default function signup() {
   return (
-    <div className="row d-flex justify-content-between flex-wrap-reverse my-4" style={{minHeight: "80vh"}}>
-      <div className="col-lg-6 col-md-6 d-flex justify-content-center align-items-center mx-auto">
+    <div className="row d-flex justify-content-center flex-wrap-reverse my-4" style={{minHeight: "80vh"}}>
+      <div className="col-lg-6 col-md-6 d-flex justify-content-center align-items-center">
         <div className="w-75">
         <h2 className="heading-secondary ma-bt-lg px-3">Ստեղծել նոր հաշիվ</h2>
       <form className="form--login px-3 mb-3" id="form--signup">
@@ -26,11 +26,11 @@ export default function signup() {
             <input className="form__input" id="passwordConfirm" type="password" placeholder="••••••••" required="required" minLength="8" />
           </div>
           <span className="mb-3">Արդեն ունե՞ք հաշիվ:<Link to="/login" style={{color: "var(--mainGreen)"}}> Մուտք գործեք։</Link></span>
-          <div className="form__group my-2 float-right"><button className="btn btn--green mt-2">Գրանցվել</button></div>
+          <div className="form__group my-2 float-right"><button className="btn btn--green mt-3">Գրանցվել</button></div>
       </form>
         </div>
       </div>
-      <div className="col-lg-5 col-md-6 col-sm-11 col-11 d-none d-md-flex justify-content-center align-items-center mx-auto">
+      <div className="col-lg-5 col-md-6 col-sm-11 col-11 d-none d-md-flex justify-content-center align-items-center">
         <img src={image1} className="img-fluid" width="100%" height="500px" alt="Cook..." />
       </div>
     </div>

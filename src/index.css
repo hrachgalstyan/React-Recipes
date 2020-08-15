@@ -20,6 +20,11 @@ body {
   color: var(--placeholder);
 }
 
+a {
+  text-decoration: none !important;
+  color: rgba(0, 0, 0, 0.8);
+}
+
 .text--green {
   color: var(--mainGreen) !important;
 }
@@ -41,7 +46,7 @@ body {
 .nav-item:active {
   -webkit-transform: translateY(-2px) !important;
   transform: translateY(-2px) !important;
-  text-shadow: 0 0.7rem 1rem black !important;
+  text-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.8) !important;
   transition-duration: 0.3s !important;
 }
 
@@ -66,6 +71,12 @@ body {
 
 .navbar-toggler{
   border: none !important;
+}
+
+/************************ Footer ******************************/
+
+.page-footer{
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 /************************ LOGIN ******************************/
