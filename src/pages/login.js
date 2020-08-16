@@ -11,9 +11,10 @@ export default function login() {
 
     const data = JSON.stringify({email,password});
     console.log(data);
-    axios.post('https://baghadratomser.herokuapp.com/api/v1/users/login', data, {
+    axios.post('https://sweet-recipes.netlify.app/api/v1/users/login', data, {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+        'responseType': 'json'
       }
     })
       .then(response => { 
