@@ -9,8 +9,8 @@ export default function RecipesProvider({ children }) {
 
     React.useEffect(() => {
       setLoading(true);
-      axios.get(`https://tours-natours.herokuapp.com/api/v1/tours`).then(response => {
-        setRecipes(response.data.data);
+      axios.get(`https://baghadratomser.herokuapp.com/api/v1/recipes`).then(response => {
+        setRecipes(response.data);
         setLoading(false);
       });
       return () => {};

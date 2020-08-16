@@ -9,29 +9,20 @@ export default function login() {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    try {
-      const res = await axios({
-          method: 'POST',
-          url: 'https://baghadratomser.herokuapp.com/api/v1/users/login',
-          data: {
-              email,
-              password,
-          },
-      });
-      if (res.data.status === 'success') {
-          window.setTimeout(() => {
-              window.location.assign('/');
-          }, 0);
+    const data = JSON.stringify({email,password});
+    console.log(data);
+    axios.post('https://baghadratomser.herokuapp.com/api/v1/users/login', data, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
       }
-  } catch (err) {
-      console.log(err);
-  }
-    // axios.post(`https://baghadratomser.herokuapp.com/api/v1/users/login`, { email, password })
-    //   .then(res => {
-    //     console.log(res);
-    //     console.log(res.data);
-    //   })
-  }
+    })
+      .then(response => { 
+        console.log(response)
+      })
+      .catch(error => {
+          console.log(error.response)
+      });
+    }
 
   return (
     <div className="row d-flex justify-content-center flex-wrap-reverse my-4" style={{minHeight: "60vh"}}>
@@ -56,22 +47,5 @@ export default function login() {
         <img src={image1} className="img-fluid" width="100%" height="500px" alt="Cook..." />
       </div>
     </div>
-    // <main className="main row mt-5">
-    //   <div className="login-form mx-auto p-4 col-lg-4 col-md-8 col-sm-10 col-11 mt-5">
-    //       <h2 className="heading-secondary ma-bt-lg px-3">Մուտք գործեք</h2>
-    //       <form className="form--login px-3 mb-3" id="form--login">
-    //           <div className="form__group">
-    //             <label className="form__label" htmlFor="email">Էլ․ հասցե</label>
-    //             <input className="form__input" id="email" type="email" placeholder="you@example.com" required="required" />
-    //           </div>
-    //           <div className="form__group ma-bt-md">
-    //             <label className="form__label" htmlFor="password">Գաղտնաբառ</label>
-    //             <input className="form__input" id="password" type="password" placeholder="••••••••" required="required" minLength="8" />
-    //           </div>
-    //           <span>Դեռ գրանցված չե՞ք։ <Link to="/signup" style={{color: "var(--mainGreen)"}}>Գրանցվել։</Link></span>
-    //           <div className="form__group my-2"><button className="btn btn--green">Մուտք</button></div>
-    //       </form>
-    //   </div>
-    // </main>
   )
 }
