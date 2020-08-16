@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function advices() {
   return (
-    <h1>
+    <button>
       advices
-    </h1>
+    </button>
   )
 }
 

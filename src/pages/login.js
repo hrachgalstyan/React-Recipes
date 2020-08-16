@@ -1,14 +1,44 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import image1 from '../assets/login.svg'
+import axios from 'axios';
 
 export default function login() {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+      const res = await axios({
+          method: 'POST',
+          url: 'https://baghadratomser.herokuapp.com/api/v1/users/login',
+          data: {
+              email,
+              password,
+          },
+      });
+      if (res.data.status === 'success') {
+          window.setTimeout(() => {
+              window.location.assign('/');
+          }, 0);
+      }
+  } catch (err) {
+      console.log(err);
+  }
+    // axios.post(`https://baghadratomser.herokuapp.com/api/v1/users/login`, { email, password })
+    //   .then(res => {
+    //     console.log(res);
+    //     console.log(res.data);
+    //   })
+  }
+
   return (
     <div className="row d-flex justify-content-center flex-wrap-reverse my-4" style={{minHeight: "60vh"}}>
       <div className="col-lg-6 col-md-6 d-flex justify-content-center align-items-center">
         <div className="w-75">
           <h2 className="heading-secondary p-3">Մուտք գործեք</h2>
-          <form className="form--login px-3 mb-3" id="form--login">
+          <form className="form--login px-3 mb-3" id="form--login" onSubmit={handleSubmit}>
               <div className="form__group">
                 <label className="form__label" htmlFor="email">Էլ․ հասցե</label>
                 <input className="form__input" id="email" type="email" placeholder="you@example.com" required="required" />
@@ -18,7 +48,7 @@ export default function login() {
                 <input className="form__input" id="password" type="password" placeholder="••••••••" required="required" minLength="8" />
               </div>
               <span>Դեռ գրանցված չե՞ք։ <Link to="/signup" style={{color: "var(--mainGreen)"}}>Գրանցվել։</Link></span>
-            <div className="form__group my-2"><button className="btn btn--green mt-3">Մուտք</button></div>
+            <div className="form__group my-2"><button className="btn btn--green mt-3" type="submit">Մուտք</button></div>
           </form>
         </div>
       </div>

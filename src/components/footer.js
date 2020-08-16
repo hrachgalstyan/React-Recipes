@@ -68,7 +68,7 @@ const footer = () => {
         <p>
           <i className="fa fa-phone"></i> +374(44)-44-44-44</p>
         <p>
-          <i className="fa fa-link"></i> <Link to="/contacts">https://recipes.am/contacts </Link></p>
+          <i className="fa fa-link"></i> <Link to="/contact">https://recipes.am/contact </Link></p>
 
       </div>
 
@@ -76,11 +76,11 @@ const footer = () => {
 
   </div>
   <div className="footer-copyright text-center py-3">
-    <i className="fa fa-facebook p-3"></i>
-    <i className="fa fa-instagram p-3"></i>
-    <i className="fa fa-telegram p-3"></i>
-    <i className="fa fa-google p-3"></i>
-    <i className="fa fa-vk p-3"></i>
+    <i className="fa fa-facebook p-3" style={{color: "var(--mainGreen)"}}></i>
+    <i className="fa fa-instagram p-3" style={{color: "var(--mainGreen)"}}></i>
+    <i className="fa fa-telegram p-3" style={{color: "var(--mainGreen)"}}></i>
+    <i className="fa fa-google p-3" style={{color: "var(--mainGreen)"}}></i>
+    <i className="fa fa-vk p-3" style={{color: "var(--mainGreen)"}}></i>
   </div>
   <div className="footer-copyright text-center py-3">© 2020 Copyright:
     <Link to="/"> Recipes.am</Link>
